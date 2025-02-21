@@ -1,7 +1,15 @@
 "use client";
 import { Calendar } from "./Calendar";
-import { today, getLocalTimeZone } from "@internationalized/date";
+import {
+  today,
+  getLocalTimeZone,
+  parseDate,
+  CalendarDate,
+} from "@internationalized/date";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { DateValue } from "react-aria";
+import { set } from "zod";
 
 interface iAppProps {
   availability: {
@@ -11,6 +19,30 @@ interface iAppProps {
 }
 
 export function RenderCalendar({ availability }: iAppProps) {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const [date, setDate] = useState(() => {
+    const dateParam = searchParams.get("date");
+    return dateParam ? parseDate(dateParam) : today(getLocalTimeZone());
+  });
+
+  useEffect(() => {
+    const dateParam = searchParams.get("date");
+    if (dateParam) {
+      setDate(parseDate(dateParam));
+    }
+  }, [searchParams]);
+
+  const handleDateChange = (date: DateValue) => {
+    setDate(date as CalendarDate);
+
+    const url = new URL(window.location.href);
+
+    url.searchParams.set("date", date.toString());
+
+    router.push(url.toString());
+  };
+
   const isDateUnavailabe = (date: DateValue) => {
     const dayOfWeek = date.toDate(getLocalTimeZone()).getDay();
     const adjustedIndex = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
@@ -19,7 +51,9 @@ export function RenderCalendar({ availability }: iAppProps) {
   return (
     <Calendar
       minValue={today(getLocalTimeZone())}
-      isDateUnavailable={isDateUnavailabe as any}
+      isDateUnavailable={isDateUnavailabe}
+      value={date}
+      onChange={handleDateChange}
     />
   );
 }

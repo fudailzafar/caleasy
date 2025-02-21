@@ -45,10 +45,21 @@ async function getData(eventUrl: string, userName: string) {
 
 export default async function BookingFormRoute({
   params,
+  searchParams,
 }: {
   params: { username: string; eventUrl: string };
+  searchParams: { date?: string };
 }) {
   const data = await getData(params.eventUrl, params.username);
+  const selectedDate = searchParams.date
+    ? new Date(searchParams.date)
+    : new Date();
+
+  const formattedDate = new Intl.DateTimeFormat("en-US", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  }).format(selectedDate);
   return (
     <div className="min-h-screen w-screen flex items-center justify-center">
       <Card className="max-w-[1000px] w-full mx-auto">
@@ -70,7 +81,7 @@ export default async function BookingFormRoute({
               <p className="flex items-center">
                 <CalendarX2 className="size-4 mr-2 text-primary" />
                 <span className="text-sm font-medium text-muted-foreground">
-                  21. Feb 2025
+                  {formattedDate}
                 </span>
               </p>
               <p className="flex items-center">
@@ -89,6 +100,7 @@ export default async function BookingFormRoute({
           </div>
           <Separator orientation="vertical" className="h-full w-[1px]" />
           <RenderCalendar availability={data.User?.availability as any} />
+          <Separator orientation="vertical" className="h-full w-[1px]" />
         </CardContent>
       </Card>
     </div>
