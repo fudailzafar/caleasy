@@ -25,7 +25,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { ButtonGroup } from "@/components/ButtonGroup";
+import { ButtonGroup } from "@/components/ui/ButtonGroup";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { SubmitButton } from "./SubmitButtons";

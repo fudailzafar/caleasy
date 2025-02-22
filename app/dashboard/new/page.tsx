@@ -2,7 +2,7 @@
 
 import { CreateEventTypeAction } from "@/app/actions";
 import { SubmitButton } from "@/app/components/SubmitButtons";
-import { ButtonGroup } from "@/components/ButtonGroup";
+import { ButtonGroup } from "@/components/ui/ButtonGroup";
 import { Button } from "@/components/ui/button";
 import {
   Card,

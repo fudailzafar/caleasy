@@ -2,7 +2,6 @@
 
 import {
   eventTypeSchema,
-  onboardingSchema,
   onboardingSchemaValidation,
   settingsSchema,
 } from "@/lib/zodSchemas";
@@ -289,6 +288,55 @@ export async function EditEventTypeAction(prevState: any, formData: FormData) {
       url: submission.value.url,
       description: submission.value.description,
       videoCallSoftware: submission.value.videoCallSoftware,
+    },
+  });
+
+  return redirect("/dashboard");
+}
+
+export async function updateEventTypeStatusAction(
+  prevState: any,
+  {
+    eventTypeId,
+    isChecked,
+  }: {
+    eventTypeId: string;
+    isChecked: boolean;
+  }
+) {
+  try {
+    const session = await requireUser();
+
+    const data = await prisma.eventType.update({
+      where: {
+        id: eventTypeId,
+        userId: session.user?.id as string,
+      },
+      data: {
+        active: isChecked,
+      },
+    });
+
+    revalidatePath(`/dashboard`);
+    return {
+      status: "success",
+      message: "EventType Status updated successfully",
+    };
+  } catch (error) {
+    return {
+      status: "error",
+      message: "Something went wrong",
+    };
+  }
+}
+
+export async function DeleteEventTypeAction(formData: FormData) {
+  const session = await requireUser();
+
+  const data = await prisma.eventType.delete({
+    where: {
+      id: formData.get("id") as string,
+      userId: session.user?.id,
     },
   });
 

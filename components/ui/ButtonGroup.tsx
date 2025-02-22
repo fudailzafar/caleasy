@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { Children, cloneElement, ReactElement } from "react";
-import { ButtonProps } from "./ui/button";
+import { ButtonProps } from "./button";
 
 interface iAppProps {
   className?: string;

@@ -15,7 +15,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { auth, signOut } from "../lib/auth";
+import { signOut } from "../lib/auth";
 import { requireUser } from "../lib/hooks";
 import { prisma } from "../lib/db";
 import { redirect } from "next/navigation";
@@ -130,7 +130,7 @@ export default async function DashboardLayout({
           </main>
         </div>
       </div>
-      <Toaster richColors closeButton/>
+      <Toaster richColors closeButton />
     </>
   );
 }
