@@ -63,7 +63,7 @@ export function SettingsForm({ email, fullName, profileImage }: iAppProps) {
               name={fields.fullName.name}
               key={fields.fullName.key}
               defaultValue={fullName}
-              placeholder="Jan Marshal"
+              placeholder="Fudail Zafar"
             />
             <p className="text-red-500 text-sm">{fields.fullName.errors}</p>
           </div>
