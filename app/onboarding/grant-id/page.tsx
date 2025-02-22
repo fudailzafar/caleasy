@@ -22,7 +22,7 @@ export default function OnboardingrouteTwo() {
           </CardDescription>
           <Image
             src={VideoGif}
-            alt="Almost finished Gif"
+            alt="Almost finished gif"
             className="w-full rounded-lg"
           />
         </CardHeader>

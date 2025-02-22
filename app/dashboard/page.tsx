@@ -1,21 +1,30 @@
 import { notFound } from "next/navigation";
-import { prisma } from "../lib/db";
+import prisma from "../lib/db";
 import { requireUser } from "../lib/hooks";
 import { EmptyState } from "../components/EmptyState";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ExternalLink, Pen, Settings, Trash, Users2 } from "lucide-react";
+import {
+  ExternalLink,
+  Link2,
+  Pen,
+  Settings,
+  Trash,
+  Users2,
+} from "lucide-react";
+import { Switch } from "@/components/ui/switch";
+import { ButtonGroup } from "@/components/ui/ButtonGroup";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { DropdownMenuSeparator } from "@radix-ui/react-dropdown-menu";
 import { CopyLinkMenuItem } from "../components/CopyLinkMenu";
-import { MenuActiveSwitcher } from "../components/EventTypeSwitcher";
+import { MenuActiveSwitch } from "../components/EventTypeSwitcher";
 
 async function getData(userId: string) {
   const data = await prisma.user.findUnique({
@@ -39,12 +48,14 @@ async function getData(userId: string) {
   if (!data) {
     return notFound();
   }
+
   return data;
 }
 
-export default async function Dashboard() {
+export default async function DashboardPage() {
   const session = await requireUser();
   const data = await getData(session.user?.id as string);
+
   return (
     <>
       {data.eventType.length === 0 ? (
@@ -58,10 +69,10 @@ export default async function Dashboard() {
         <>
           <div className="flex items-center justify-between px-2">
             <div className="hidden sm:grid gap-y-1">
-              <h1 className="text-3xl md:text-3xl font-semibold">
+              <h1 className="text-3xl md:text-4xl font-semibold">
                 Event Types
               </h1>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground ">
                 Create and manage your event types right here.
               </p>
             </div>
@@ -102,6 +113,7 @@ export default async function Dashboard() {
                           </Link>
                         </DropdownMenuItem>
                       </DropdownMenuGroup>
+                      <DropdownMenuSeparator />
                       <DropdownMenuItem asChild>
                         <Link href={`/dashboard/event/${item.id}/delete`}>
                           <Trash className="size-4 mr-2" />
@@ -111,6 +123,7 @@ export default async function Dashboard() {
                     </DropdownMenuContent>
                   </DropdownMenu>
                 </div>
+
                 <Link href="/" className="flex items-center p-5">
                   <div className="flex-shrink-0">
                     <Users2 className="size-6" />
@@ -126,10 +139,11 @@ export default async function Dashboard() {
                   </div>
                 </Link>
                 <div className="bg-muted px-5 py-3 justify-between items-center flex">
-                  <MenuActiveSwitcher
-                    initialChecked={item.active}
+                  <MenuActiveSwitch
+                    initalChecked={item.active}
                     eventTypeId={item.id}
                   />
+
                   <Button asChild>
                     <Link href={`/dashboard/event/${item.id}`}>Edit Event</Link>
                   </Button>

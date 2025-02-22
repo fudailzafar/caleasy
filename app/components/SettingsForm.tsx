@@ -11,11 +11,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { SubmitButton } from "./SubmitButtons";
-import { useActionState, useState } from "react";
+import { useFormState } from "react-dom";
 import { SettingsAction } from "../actions";
 import { useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
-import { settingsSchema } from "@/lib/zodSchemas";
+import { settingsSchema } from "../lib/zodSchemas";
+import { useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import { UploadDropzone } from "../lib/uploadthing";
@@ -28,18 +30,21 @@ interface iAppProps {
 }
 
 export function SettingsForm({ email, fullName, profileImage }: iAppProps) {
-  const [lastResult, action] = useActionState(SettingsAction, undefined);
+  const [lastResult, action] = useFormState(SettingsAction, undefined);
   const [currentProfileImage, setCurrentProfileImage] = useState(profileImage);
   const [form, fields] = useForm({
     lastResult,
+
     onValidate({ formData }) {
       return parseWithZod(formData, {
         schema: settingsSchema,
       });
     },
+
     shouldValidate: "onBlur",
     shouldRevalidate: "onInput",
   });
+
   const handleDeleteImage = () => {
     setCurrentProfileImage("");
   };
@@ -58,7 +63,7 @@ export function SettingsForm({ email, fullName, profileImage }: iAppProps) {
               name={fields.fullName.name}
               key={fields.fullName.key}
               defaultValue={fullName}
-              placeholder="Fudail Zafar"
+              placeholder="Jan Marshal"
             />
             <p className="text-red-500 text-sm">{fields.fullName.errors}</p>
           </div>
@@ -66,6 +71,7 @@ export function SettingsForm({ email, fullName, profileImage }: iAppProps) {
             <Label>Email</Label>
             <Input disabled defaultValue={email} placeholder="test@test.com" />
           </div>
+
           <div className="grid gap-y-5">
             <Label>Profile Image</Label>
             <input
@@ -81,6 +87,7 @@ export function SettingsForm({ email, fullName, profileImage }: iAppProps) {
                   alt="Profile Image"
                   className="size-16 rounded-lg"
                 />
+
                 <Button
                   onClick={handleDeleteImage}
                   variant="destructive"

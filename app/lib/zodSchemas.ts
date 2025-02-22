@@ -8,7 +8,7 @@ export const onboardingSchema = z.object({
     .min(3)
     .max(150)
     .regex(/^[a-zA-Z0-9-]+$/, {
-      message: "Username can only contain letters, numbers and -",
+      message: "Username can only contain letters, number and -",
     }),
 });
 
@@ -21,7 +21,7 @@ export function onboardingSchemaValidation(options?: {
       .min(3)
       .max(150)
       .regex(/^[a-zA-Z0-9-]+$/, {
-        message: "Username can only contain letters, numbers and -",
+        message: "Username can only contain letters, number and -",
       })
       .pipe(
         z.string().superRefine((_, ctx) => {
@@ -38,7 +38,7 @@ export function onboardingSchemaValidation(options?: {
             if (!isUnique) {
               ctx.addIssue({
                 code: "custom",
-                message: "Username is already used",
+                message: "Username is alredy used",
               });
             }
           });
@@ -50,6 +50,7 @@ export function onboardingSchemaValidation(options?: {
 
 export const settingsSchema = z.object({
   fullName: z.string().min(3).max(150),
+
   profileImage: z.string(),
 });
 

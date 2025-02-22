@@ -1,6 +1,7 @@
-import { prisma } from "@/app/lib/db";
+import prisma from "@/app/lib/db";
 import { nylas } from "@/app/lib/nylas";
 import { Button } from "@/components/ui/button";
+import { ButtonGroup } from "@/components/ui/ButtonGroup";
 import { Prisma } from "@prisma/client";
 import {
   addMinutes,
@@ -11,9 +12,7 @@ import {
   parse,
 } from "date-fns";
 import Link from "next/link";
-import { GetFreeBusyResponse, NylasResponse } from "nylas";
-import { start } from "repl";
-import { string } from "zod";
+import { GetFreeBusyRequest, GetFreeBusyResponse, NylasResponse } from "nylas";
 
 async function getData(userName: string, selectedDate: Date) {
   const currentDay = format(selectedDate, "EEEE");
@@ -23,6 +22,7 @@ async function getData(userName: string, selectedDate: Date) {
 
   const endOfDay = new Date(selectedDate);
   endOfDay.setHours(23, 59, 59, 999);
+
   const data = await prisma.availability.findFirst({
     where: {
       day: currentDay as Prisma.EnumDayFilter,
@@ -64,9 +64,9 @@ interface iAppProps {
   duration: number;
 }
 
-function calculateAvailableTimeSlots(
+function calucalteAvailableTimeSlots(
   date: string,
-  dbAvailability: {
+  dbAvailablity: {
     fromTime: string | undefined;
     tillTime: string | undefined;
   },
@@ -76,17 +76,18 @@ function calculateAvailableTimeSlots(
   const now = new Date();
 
   const availableFrom = parse(
-    `${date} ${dbAvailability.fromTime}`,
+    `${date} ${dbAvailablity.fromTime}`,
     "yyyy-MM-dd HH:mm",
     new Date()
   );
 
   const availableTill = parse(
-    `${date} ${dbAvailability.tillTime}`,
+    `${date} ${dbAvailablity.tillTime}`,
     "yyyy-MM-dd HH:mm",
     new Date()
   );
 
+  //@ts-ignore
   const busySlots = nylasData.data[0].timeSlots.map((slot) => ({
     start: fromUnixTime(slot.startTime),
     end: fromUnixTime(slot.endTime),
@@ -98,8 +99,6 @@ function calculateAvailableTimeSlots(
     allSlots.push(currentSlot);
     currentSlot = addMinutes(currentSlot, duration);
   }
-
-
 
   const freeSlots = allSlots.filter((slot) => {
     const slotEnd = addMinutes(slot, duration);
@@ -126,17 +125,18 @@ export async function TimeTable({
   const { data, nylasCalendarData } = await getData(userName, selectedDate);
 
   const formattedDate = format(selectedDate, "yyyy-MM-dd");
-  const dbAvailability = {
+  const dbAvailablity = {
     fromTime: data?.fromTime,
     tillTime: data?.tillTime,
   };
 
-  const availableSlots = calculateAvailableTimeSlots(
+  const availableSlots = calucalteAvailableTimeSlots(
     formattedDate,
-    dbAvailability,
+    dbAvailablity,
     nylasCalendarData,
     duration
   );
+
   return (
     <div>
       <p className="text-base font-semibold">
@@ -146,20 +146,20 @@ export async function TimeTable({
         </span>
       </p>
 
-      <div className="mt-3 max-h-[350px] overflow-y-auto">
+      <div className="mt-3 max-h-[300px] overflow-y-auto">
         {availableSlots.length > 0 ? (
           availableSlots.map((slot, index) => (
             <Link
               href={`?date=${format(selectedDate, "yyyy-MM-dd")}&time=${slot}`}
               key={index}
             >
-              <Button className="w-full mb-2" variant={"outline"}>
+              <Button className="w-full mb-2" variant="outline">
                 {slot}
               </Button>
             </Link>
           ))
         ) : (
-          <p>No time slots availabile</p>
+          <p>No time slots available</p>
         )}
       </div>
     </div>

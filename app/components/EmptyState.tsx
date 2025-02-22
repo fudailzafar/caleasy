@@ -20,8 +20,9 @@ export function EmptyState({
       <div className="flex items-center justify-center size-20 rounded-full bg-primary/10">
         <Ban className="size-10 text-primary" />
       </div>
+
       <h2 className="mt-6 text-xl font-semibold">{title}</h2>
-      <p className="mb-8 mt-2 text-sm text-muted-foreground max-w-sm mx-auto">
+      <p className="mb-8 mt-2 text-sm text-muted-foreground max-w-xs mx-auto">
         {description}
       </p>
 
