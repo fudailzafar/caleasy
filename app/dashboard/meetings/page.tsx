@@ -12,7 +12,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { log } from "console";
 import { format, fromUnixTime } from "date-fns";
 import { Video } from "lucide-react";
 
@@ -66,7 +65,7 @@ export default async function MeetingsRoute() {
           </CardHeader>
           <CardContent>
             {data.data.map((item) => (
-              <form action={cancelMeetingAction}>
+              <form action={cancelMeetingAction} key={item.id}>
                 <input type="hidden" name="eventId" value={item.id} />
                 <div className="grid grid-cols-3 justify-between items-center">
                   <div>

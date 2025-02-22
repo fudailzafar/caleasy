@@ -4,15 +4,7 @@ import { requireUser } from "../lib/hooks";
 import { EmptyState } from "../components/EmptyState";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import {
-  ExternalLink,
-  Link2,
-  Pen,
-  Settings,
-  Trash,
-  Users2,
-} from "lucide-react";
-import { Switch } from "@/components/ui/switch";
+import { ExternalLink, Pen, Settings, Trash, Users2 } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,6 +15,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { DropdownMenuSeparator } from "@radix-ui/react-dropdown-menu";
 import { CopyLinkMenuItem } from "../components/CopyLinkMenu";
+import { MenuActiveSwitcher } from "../components/EventTypeSwitcher";
 
 async function getData(userId: string) {
   const data = await prisma.user.findUnique({
@@ -109,8 +102,11 @@ export default async function Dashboard() {
                           </Link>
                         </DropdownMenuItem>
                       </DropdownMenuGroup>
-                      <DropdownMenuItem>
-                        <Trash className="size-4 mr-2" /> Delete
+                      <DropdownMenuItem asChild>
+                        <Link href={`/dashboard/event/${item.id}/delete`}>
+                          <Trash className="size-4 mr-2" />
+                          Delete
+                        </Link>
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
@@ -130,7 +126,10 @@ export default async function Dashboard() {
                   </div>
                 </Link>
                 <div className="bg-muted px-5 py-3 justify-between items-center flex">
-                  <Switch />
+                  <MenuActiveSwitcher
+                    initialChecked={item.active}
+                    eventTypeId={item.id}
+                  />
                   <Button asChild>
                     <Link href={`/dashboard/event/${item.id}`}>Edit Event</Link>
                   </Button>
