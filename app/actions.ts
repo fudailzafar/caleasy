@@ -1,13 +1,13 @@
 "use server";
 
+import prisma from "./lib/db";
+import { requireUser } from "./lib/hooks";
+import { parseWithZod } from "@conform-to/zod";
 import {
   eventTypeSchema,
   onboardingSchemaValidation,
   settingsSchema,
-} from "@/lib/zodSchemas";
-import { prisma } from "./lib/db";
-import { requireUser } from "./lib/hooks";
-import { parseWithZod } from "@conform-to/zod";
+} from "./lib/zodSchemas";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { nylas } from "./lib/nylas";
@@ -18,14 +18,16 @@ export async function OnboardingAction(prevState: any, formData: FormData) {
   const submission = await parseWithZod(formData, {
     schema: onboardingSchemaValidation({
       async isUsernameUnique() {
-        const existingUsername = await prisma.user.findUnique({
+        const exisitingUsername = await prisma.user.findUnique({
           where: {
             userName: formData.get("userName") as string,
           },
         });
-        return !existingUsername;
+
+        return !exisitingUsername;
       },
     }),
+
     async: true,
   });
 
@@ -84,7 +86,6 @@ export async function OnboardingAction(prevState: any, formData: FormData) {
     },
   });
 
-  //   formData.get("username");
   return redirect("/onboarding/grant-id");
 }
 
@@ -94,6 +95,7 @@ export async function SettingsAction(prevState: any, formData: FormData) {
   const submission = parseWithZod(formData, {
     schema: settingsSchema,
   });
+
   if (submission.status !== "success") {
     return submission.reply();
   }
@@ -107,6 +109,7 @@ export async function SettingsAction(prevState: any, formData: FormData) {
       image: submission.value.profileImage,
     },
   });
+
   return redirect("/dashboard");
 }
 
@@ -124,7 +127,7 @@ export async function updateAvailabilityAction(formData: FormData) {
         id,
         isActive: rawData[`isActive-${id}`] === "on",
         fromTime: rawData[`fromTime-${id}`] as string,
-        tillTIme: rawData[`tillTime-${id}`] as string,
+        tillTime: rawData[`tillTime-${id}`] as string,
       };
     });
 
@@ -138,11 +141,12 @@ export async function updateAvailabilityAction(formData: FormData) {
           data: {
             isActive: item.isActive,
             fromTime: item.fromTime,
-            tillTime: item.tillTIme,
+            tillTime: item.tillTime,
           },
         })
       )
     );
+
     revalidatePath("/dashboard/availability");
   } catch (error) {
     console.log(error);
@@ -154,6 +158,7 @@ export async function CreateEventTypeAction(
   formData: FormData
 ) {
   const session = await requireUser();
+
   const submission = parseWithZod(formData, {
     schema: eventTypeSchema,
   });
@@ -205,7 +210,8 @@ export async function CreateMeetingAction(formData: FormData) {
   const eventDate = formData.get("eventDate") as string;
   const meetingLength = Number(formData.get("meetingLength"));
   const provider = formData.get("provider") as string;
-  const startDateTime = new Date(`{eventDate}T${fromTime}:00`);
+
+  const startDateTime = new Date(`${eventDate}T${fromTime}:00`);
 
   const endDateTime = new Date(startDateTime.getTime() + meetingLength * 60000);
 
@@ -269,6 +275,7 @@ export async function cancelMeetingAction(formData: FormData) {
 
 export async function EditEventTypeAction(prevState: any, formData: FormData) {
   const session = await requireUser();
+
   const submission = parseWithZod(formData, {
     schema: eventTypeSchema,
   });
@@ -294,7 +301,7 @@ export async function EditEventTypeAction(prevState: any, formData: FormData) {
   return redirect("/dashboard");
 }
 
-export async function updateEventTypeStatusAction(
+export async function UpdateEventTypeStatusAction(
   prevState: any,
   {
     eventTypeId,

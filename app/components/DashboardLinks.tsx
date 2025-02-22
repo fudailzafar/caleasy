@@ -1,4 +1,6 @@
 "use client";
+
+import { cn } from "@/lib/utils";
 import {
   CalendarCheck,
   HomeIcon,
@@ -7,9 +9,9 @@ import {
   Users2,
 } from "lucide-react";
 import Link from "next/link";
-import { ForwardRefExoticComponent, RefAttributes } from "react";
 import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
+import { ForwardRefExoticComponent, RefAttributes } from "react";
+
 interface iAppProps {
   id: number;
   name: string;
@@ -34,7 +36,7 @@ export const dashboardLinks: iAppProps[] = [
   },
   {
     id: 2,
-    name: "Availability",
+    name: "Availablity",
     href: "/dashboard/availability",
     icon: CalendarCheck,
   },

@@ -1,5 +1,5 @@
 import { EditEventForm } from "@/app/components/EditEventTypeForm";
-import { prisma } from "@/app/lib/db";
+import prisma from "@/app/lib/db";
 import { notFound } from "next/navigation";
 
 async function getData(eventTypeId: string) {

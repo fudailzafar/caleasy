@@ -1,4 +1,4 @@
-import { prisma } from "@/app/lib/db";
+import prisma from "@/app/lib/db";
 import { requireUser } from "@/app/lib/hooks";
 import { nylas, nylasConfig } from "@/app/lib/nylas";
 import { redirect } from "next/navigation";
@@ -19,11 +19,13 @@ export async function GET(req: NextRequest) {
   try {
     const response = await nylas.auth.exchangeCodeForToken({
       clientSecret: nylasConfig.apiKey,
-      clientId: nylasConfig.clientId ?? "",
+      clientId: nylasConfig.clientId,
       redirectUri: nylasConfig.redirectUri,
       code: code,
     });
+
     const { grantId, email } = response;
+
     await prisma.user.update({
       where: {
         id: session.user?.id,

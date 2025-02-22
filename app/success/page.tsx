@@ -21,7 +21,7 @@ export default function SuccessRoute() {
         </CardContent>
         <CardFooter>
           <Button className="w-full" asChild>
-            <Link href={"/"}>Close this Page</Link>
+            <Link href="/">Close this Page</Link>
           </Button>
         </CardFooter>
       </Card>

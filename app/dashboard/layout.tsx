@@ -15,11 +15,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { signOut } from "../lib/auth";
+import { auth, signOut } from "../lib/auth";
 import { requireUser } from "../lib/hooks";
-import { prisma } from "../lib/db";
+import prisma from "../lib/db";
 import { redirect } from "next/navigation";
-import { Toaster } from "sonner";
+import { Toaster } from "@/components/ui/sonner";
 
 async function getData(userId: string) {
   const data = await prisma.user.findUnique({
@@ -31,13 +31,15 @@ async function getData(userId: string) {
       grantId: true,
     },
   });
+
   if (!data?.userName) {
     return redirect("/onboarding");
   }
 
   if (!data.grantId) {
-    return redirect("/dashboard/grant-id");
+    return redirect("/onboarding/grant-id");
   }
+
   return data;
 }
 
@@ -47,6 +49,7 @@ export default async function DashboardLayout({
   children: ReactNode;
 }) {
   const session = await requireUser();
+
   const data = await getData(session.user?.id as string);
   return (
     <>
@@ -61,6 +64,7 @@ export default async function DashboardLayout({
                 </p>
               </Link>
             </div>
+
             <div className="flex-1">
               <nav className="grid items-start px-2 lg:px-4">
                 <DashboardLinks />
@@ -68,6 +72,7 @@ export default async function DashboardLayout({
             </div>
           </div>
         </div>
+
         <div className="flex flex-col">
           <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
             <Sheet>
@@ -80,19 +85,21 @@ export default async function DashboardLayout({
                   <Menu className="size-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side={"left"} className="flex flex-col">
+              <SheetContent side="left" className="flex flex-col ">
                 <nav className="grid gap-2 mt-10">
                   <DashboardLinks />
                 </nav>
               </SheetContent>
             </Sheet>
+
             <div className="ml-auto flex items-center gap-x-4">
               <ThemeToggle />
+
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
-                    variant={"secondary"}
-                    size={"icon"}
+                    variant="secondary"
+                    size="icon"
                     className="rounded-full"
                   >
                     <img
@@ -108,7 +115,7 @@ export default async function DashboardLayout({
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
-                    <Link href={"/dashboard/settings"}>Settings</Link>
+                    <Link href="/dashboard/settings">Settings</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <form

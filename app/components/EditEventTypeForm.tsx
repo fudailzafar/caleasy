@@ -2,9 +2,10 @@
 
 import { useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
-import { useActionState, useState } from "react";
-import { EditEventTypeAction } from "../actions";
-import { eventTypeSchema } from "@/lib/zodSchemas";
+import { useState } from "react";
+import { useFormState } from "react-dom";
+import { CreateEventTypeAction, EditEventTypeAction } from "../actions";
+import { eventTypeSchema } from "../lib/zodSchemas";
 import {
   Card,
   CardContent,
@@ -53,7 +54,7 @@ export function EditEventForm({
     callProvider as VideoCallProvider
   );
 
-  const [lastResult, action] = useActionState(EditEventTypeAction, undefined);
+  const [lastResult, action] = useFormState(EditEventTypeAction, undefined);
   const [form, fields] = useForm({
     lastResult,
 
@@ -75,6 +76,7 @@ export function EditEventForm({
             Edit your appointment type that allows people to book you!
           </CardDescription>
         </CardHeader>
+
         <form id={form.id} onSubmit={form.onSubmit} action={action} noValidate>
           <input type="hidden" name="id" value={id} />
           <CardContent className="grid gap-y-5">
@@ -84,7 +86,7 @@ export function EditEventForm({
                 name={fields.title.name}
                 key={fields.title.key}
                 defaultValue={title}
-                placeholder="30 Minute Meeting"
+                placeholder="30 Minute meeting"
               />
               <p className="text-red-500 text-sm">{fields.title.errors}</p>
             </div>
@@ -92,7 +94,7 @@ export function EditEventForm({
               <Label>URL Slug</Label>
               <div className="flex rounded-md">
                 <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-muted bg-muted text-sm text-muted-foreground">
-                  CalFudail.com/
+                  CalMarshal.com/
                 </span>
                 <Input
                   name={fields.url.name}
@@ -104,6 +106,7 @@ export function EditEventForm({
               </div>
               <p className="text-red-500 text-sm">{fields.url.errors}</p>
             </div>
+
             <div className="flex flex-col gap-y-2">
               <Label>Description</Label>
               <Textarea
@@ -116,6 +119,7 @@ export function EditEventForm({
                 {fields.description.errors}
               </p>
             </div>
+
             <div className="flex flex-col gap-y-2">
               <Label>Duration</Label>
               <Select

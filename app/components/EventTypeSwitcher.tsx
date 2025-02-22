@@ -1,22 +1,20 @@
 "use client";
 
-import { updateEventTypeStatusAction } from "@/app/actions";
 import { Switch } from "@/components/ui/switch";
-import React, { useActionState, useEffect, useTransition } from "react";
+import { useFormState } from "react-dom";
+import { UpdateEventTypeStatusAction } from "../actions";
+import { useEffect, useTransition } from "react";
 import { toast } from "sonner";
 
-export function MenuActiveSwitcher({
-  initialChecked,
+export function MenuActiveSwitch({
+  initalChecked,
   eventTypeId,
 }: {
+  initalChecked: boolean;
   eventTypeId: string;
-  initialChecked: boolean;
 }) {
   const [isPending, startTransition] = useTransition();
-  const [state, action] = useActionState(
-    updateEventTypeStatusAction,
-    undefined
-  );
+  const [state, action] = useFormState(UpdateEventTypeStatusAction, undefined);
 
   useEffect(() => {
     if (state?.status === "success") {
@@ -28,7 +26,7 @@ export function MenuActiveSwitcher({
 
   return (
     <Switch
-      defaultChecked={initialChecked}
+      defaultChecked={initalChecked}
       disabled={isPending}
       onCheckedChange={(isChecked) => {
         startTransition(() => {

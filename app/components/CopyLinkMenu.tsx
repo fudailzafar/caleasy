@@ -10,12 +10,14 @@ export function CopyLinkMenuItem({ meetingUrl }: { meetingUrl: string }) {
       await navigator.clipboard.writeText(meetingUrl);
       toast.success("URL has been copied");
     } catch (err) {
-      toast.error("Could not copy the URL");
+      toast.error("Could not copy the url");
     }
   };
+
   return (
     <DropdownMenuItem onSelect={handleCopy}>
-      <Link2 className="mr-2 size-4" /> Copy
+      <Link2 className="mr-2 size-4" />
+      Copy
     </DropdownMenuItem>
   );
 }

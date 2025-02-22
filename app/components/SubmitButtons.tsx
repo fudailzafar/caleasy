@@ -11,26 +11,25 @@ import { cn } from "@/lib/utils";
 interface iAppProps {
   text: string;
   variant?:
-    | "link"
     | "default"
     | "destructive"
     | "outline"
     | "secondary"
     | "ghost"
+    | "link"
     | null
     | undefined;
-
   className?: string;
 }
 
 export function SubmitButton({ text, variant, className }: iAppProps) {
   const { pending } = useFormStatus();
+
   return (
     <>
       {pending ? (
         <Button disabled variant="outline" className={cn("w-fit", className)}>
-          <Loader2 className="size-4 mr-2 animate-spin" />
-          Please wait
+          <Loader2 className="size-4 mr-2 animate-spin" /> Please Wait
         </Button>
       ) : (
         <Button
@@ -52,15 +51,14 @@ export function GoogleAuthButton() {
     <>
       {pending ? (
         <Button disabled variant="outline" className="w-full">
-          <Loader2 className="size-4 mr-2 animate-spin" />
-          Please wait
+          <Loader2 className="size-4 mr-2 animate-spin" /> Please wait
         </Button>
       ) : (
         <Button variant="outline" className="w-full">
           <Image src={GoogleLogo} alt="Google Logo" className="size-4 mr-2" />
           Sign in with Google
         </Button>
-      )}{" "}
+      )}
     </>
   );
 }
@@ -72,15 +70,14 @@ export function GitHubAuthButton() {
     <>
       {pending ? (
         <Button disabled variant="outline" className="w-full">
-          <Loader2 className="size-4 mr-2 animate-spin" />
-          Please wait
+          <Loader2 className="size-4 mr-2 animate-spin" /> Please wait
         </Button>
       ) : (
         <Button variant="outline" className="w-full">
           <Image src={GitHubLogo} alt="GitHub Logo" className="size-4 mr-2" />
           Sign in with GitHub
         </Button>
-      )}{" "}
+      )}
     </>
   );
 }

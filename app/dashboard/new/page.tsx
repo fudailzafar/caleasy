@@ -2,8 +2,9 @@
 
 import { CreateEventTypeAction } from "@/app/actions";
 import { SubmitButton } from "@/app/components/SubmitButtons";
-import { ButtonGroup } from "@/components/ui/ButtonGroup";
+import { eventTypeSchema } from "@/app/lib/zodSchemas";
 import { Button } from "@/components/ui/button";
+import { ButtonGroup } from "@/components/ui/ButtonGroup";
 import {
   Card,
   CardContent,
@@ -24,11 +25,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { eventTypeSchema } from "@/lib/zodSchemas";
 import { useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
 import Link from "next/link";
-import { useActionState, useState } from "react";
+import { useState } from "react";
+import { useFormState } from "react-dom";
 
 type VideoCallProvider = "Zoom Meeting" | "Google Meet" | "Microsoft Teams";
 
@@ -36,7 +37,7 @@ export default function NewEventRoute() {
   const [activePlatform, setActivePlatform] =
     useState<VideoCallProvider>("Google Meet");
 
-  const [lastResult, action] = useActionState(CreateEventTypeAction, undefined);
+  const [lastResult, action] = useFormState(CreateEventTypeAction, undefined);
   const [form, fields] = useForm({
     lastResult,
 
@@ -58,6 +59,7 @@ export default function NewEventRoute() {
             Create new appointment type that allows people to book you!
           </CardDescription>
         </CardHeader>
+
         <form id={form.id} onSubmit={form.onSubmit} action={action} noValidate>
           <CardContent className="grid gap-y-5">
             <div className="flex flex-col gap-y-2">
@@ -66,7 +68,7 @@ export default function NewEventRoute() {
                 name={fields.title.name}
                 key={fields.title.key}
                 defaultValue={fields.title.initialValue}
-                placeholder="30 Minute Meeting"
+                placeholder="30 Minute meeting"
               />
               <p className="text-red-500 text-sm">{fields.title.errors}</p>
             </div>
@@ -74,7 +76,7 @@ export default function NewEventRoute() {
               <Label>URL Slug</Label>
               <div className="flex rounded-md">
                 <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-muted bg-muted text-sm text-muted-foreground">
-                  CalFudail.com/
+                  CalMarshal.com/
                 </span>
                 <Input
                   name={fields.url.name}
@@ -86,6 +88,7 @@ export default function NewEventRoute() {
               </div>
               <p className="text-red-500 text-sm">{fields.url.errors}</p>
             </div>
+
             <div className="flex flex-col gap-y-2">
               <Label>Description</Label>
               <Textarea
@@ -94,8 +97,11 @@ export default function NewEventRoute() {
                 defaultValue={fields.description.initialValue}
                 placeholder="Meet me in this meeting to meet me!"
               />
-              <p className="text-red-500 text-sm">{fields.description.errors}</p>
+              <p className="text-red-500 text-sm">
+                {fields.description.errors}
+              </p>
             </div>
+
             <div className="flex flex-col gap-y-2">
               <Label>Duration</Label>
               <Select
@@ -160,7 +166,9 @@ export default function NewEventRoute() {
                   Microsoft Teams
                 </Button>
               </ButtonGroup>
-              <p className="text-red-500 text-sm">{fields.videoCallSoftware.errors}</p>
+              <p className="text-red-500 text-sm">
+                {fields.videoCallSoftware.errors}
+              </p>
             </div>
           </CardContent>
           <CardFooter className="w-full flex justify-between">
