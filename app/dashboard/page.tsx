@@ -22,6 +22,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { DropdownMenuSeparator } from "@radix-ui/react-dropdown-menu";
+import { CopyLinkMenuItem } from "../components/CopyLinkMenu";
 
 async function getData(userId: string) {
   const data = await prisma.user.findUnique({
@@ -99,11 +100,13 @@ export default async function Dashboard() {
                             Preview
                           </Link>
                         </DropdownMenuItem>
-                        <DropdownMenuItem>
-                          <Link2 className="mr-2 size-4" /> Copy
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                          <Pen className="size-4 mr-2" /> Edit
+                        <CopyLinkMenuItem
+                          meetingUrl={`${process.env.NEXT_PUBLIC_URL}/${data.userName}/${item.url}`}
+                        />
+                        <DropdownMenuItem asChild>
+                          <Link href={`/dashboard/event/${item.id}`}>
+                            <Pen className="size-4 mr-2" /> Edit
+                          </Link>
                         </DropdownMenuItem>
                       </DropdownMenuGroup>
                       <DropdownMenuItem>
@@ -128,7 +131,9 @@ export default async function Dashboard() {
                 </Link>
                 <div className="bg-muted px-5 py-3 justify-between items-center flex">
                   <Switch />
-                  <Button>Edit Event</Button>
+                  <Button asChild>
+                    <Link href={`/dashboard/event/${item.id}`}>Edit Event</Link>
+                  </Button>
                 </div>
               </div>
             ))}
