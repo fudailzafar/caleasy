@@ -9,12 +9,13 @@ import Image from "next/image";
 import Logo from "@/public/logo.png";
 import { signIn } from "../lib/auth";
 import { GitHubAuthButton, GoogleAuthButton } from "./SubmitButtons";
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 
 export function AuthModal() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>Try for Free</Button>
+        <InteractiveHoverButton>Try for Free</InteractiveHoverButton>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[360px]">
         <DialogHeader className="flex flex-row justify-center items-center gap-2">

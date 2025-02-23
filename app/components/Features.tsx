@@ -1,4 +1,5 @@
 import { CloudRain, PartyPopper, ShieldCheck, Users } from "lucide-react";
+import { AnimatedListDemo } from "./AnimatedList";
 
 const features = [
   {
@@ -42,8 +43,8 @@ export function Features() {
         </p>
       </div>
 
-      <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-        <div className="grid max-w-xl gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+      <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl md:grid md:grid-cols-2 md:gap-12">
+        <div>
           {features.map((feature) => (
             <div key={feature.name} className="relative pl-16">
               <div className="text-base font-medium leading-7">
@@ -57,6 +58,9 @@ export function Features() {
               </p>
             </div>
           ))}
+        </div>
+        <div className="py-5 md:py-1">
+          <AnimatedListDemo />
         </div>
       </div>
     </div>
