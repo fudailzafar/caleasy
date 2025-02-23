@@ -14,9 +14,11 @@ export function Navbar() {
         </h4>
       </Link>
 
-      <div className="hidden md:flex md:justify-end md:space-x-4">
+      <div className="flex justify-end items-center space-x-4">
         <ThemeToggle />
-        <AuthModal />
+        <div className="hidden md:block">
+          <AuthModal />
+        </div>
       </div>
     </div>
   );
