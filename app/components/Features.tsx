@@ -1,29 +1,29 @@
-import { CloudRain } from "lucide-react";
+import { CloudRain, PartyPopper, ShieldCheck, Users } from "lucide-react";
 
 const features = [
   {
     name: "Sign up for free",
     description:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.",
-    icon: CloudRain,
+      "Join CalFudail today at no cost, enjoying seamless, effortless booking and appointment management with our streamlined scheduling platform.",
+    icon: PartyPopper,
   },
   {
     name: "Blazing fast",
     description:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.",
+      "Experience blazing lightning speed performance with calfudail, where quick load times and rapid scheduling guarantee efficient appointment booking.",
     icon: CloudRain,
   },
   {
     name: "Super secure with nylas",
     description:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.",
-    icon: CloudRain,
+      "Benefit from top-notch security integrated with Nylas, ensuring your data and appointments remain confidential and always fully protected.",
+    icon: ShieldCheck,
   },
   {
     name: "Easy to use",
     description:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.",
-    icon: CloudRain,
+      "Calfudail's intuitive interface makes appointment scheduling effortless, allowing users to navigate, manage, and customize bookings with absolute ease.",
+    icon: Users,
   },
 ];
 

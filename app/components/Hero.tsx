@@ -1,24 +1,78 @@
 import Image from "next/image";
-import { AuthModal } from "./AuthModal";
 import HeroImage from "@/public/better.png";
+import { AnimatedGradientText } from "@/components/magicui/animated-gradient-text";
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
+import { cn } from "@/lib/utils";
+import { ChevronRight } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import Logo from "@/public/logo.png";
+import { signIn } from "../lib/auth";
+import { GitHubAuthButton, GoogleAuthButton } from "./SubmitButtons";
+
 export function Hero() {
   return (
     <section className="relative flex flex-col items-center justify-center py-12 lg:py-20">
       <div className="text-center">
-        <span className="text-sm text-primary font-medium tracking-tight bg-primary/10 px-4 py-2 rounded-full">
-          Introducing CalFudail 1.0
-        </span>
+        <AnimatedGradientText>
+          🎉 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{" "}
+          <span
+            className={cn(
+              `inline animate-gradient bg-gradient-to-r from-[#80d0ff] via-[#407bff] to-[#002f6c] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+            )}
+          >
+            Introducing CalFudail 1.0
+          </span>
+          <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+        </AnimatedGradientText>
+
         <h1 className="mt-8 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium leading-none">
-          Scheduling made{" "}
-          <span className="block text-primary -mt-2">super easy</span>
+          Time simplified,{" "}
+          <span className="block text-primary -mt-2">Life Amplified</span>
         </h1>
         <p className="max-w-xl mx-auto mt-4 lg:text-lg text-muted-foreground">
-          Scheduling a meeting can be a pain. But we at CalFudail make it easy
-          for your clients to schedule meetings with you.
+          Scheduling meetings shouldn’t be a hassle. At CalFudail, we streamline
+          the process so your clients can effortlessly book time with
+          you—allowing you to focus on what truly matters.
         </p>
 
         <div className="mt-5 mb-12">
-          <AuthModal />
+          <Dialog>
+            <DialogTrigger asChild>
+              <InteractiveHoverButton>Try for Free</InteractiveHoverButton>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[360px]">
+              <DialogHeader className="flex flex-row justify-center items-center gap-2">
+                <Image src={Logo} alt="Logo" className="size-10" />
+                <h4 className="text-3xl font-semibold">
+                  Cal<span className="text-primary">Fudail</span>
+                </h4>
+              </DialogHeader>
+              <div className="flex flex-col mt-5 gap-3">
+                <form
+                  action={async () => {
+                    "use server";
+                    await signIn("google");
+                  }}
+                  className="w-full"
+                >
+                  <GoogleAuthButton />
+                </form>
+                <form
+                  action={async () => {
+                    "use server";
+                    await signIn("github");
+                  }}
+                >
+                  <GitHubAuthButton />
+                </form>
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
 
