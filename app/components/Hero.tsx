@@ -1,4 +1,5 @@
 import Image from "next/image";
+import HeroImage from "@/public/better.png";
 import { AuthModal } from "./AuthModal";
 import { AnimatedGradientText } from "@/components/magicui/animated-gradient-text";
 import { cn } from "@/lib/utils";
@@ -89,6 +90,11 @@ export function Hero() {
             </filter>
           </defs>
         </svg>
+        <Image
+        src={HeroImage}
+        alt="Hero Image"
+        className="relative object-cover w-full border rounded-lg shadow-2xl lg:rounded-2xl"
+      />
       </div>
     </section>
   );
