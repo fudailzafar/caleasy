@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
+import type { Metadata } from "next";
 import Logo from "@/public/logo.png";
 import { DashboardLinks } from "../components/DashboardLinks";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -20,6 +21,11 @@ import { requireUser } from "../lib/hooks";
 import prisma from "../lib/db";
 import { redirect } from "next/navigation";
 import { Toaster } from "@/components/ui/sonner";
+
+export const metadata: Metadata = {
+  title: "CalFudail",
+  description: "Time Simplified, Life Amplified!",
+};
 
 async function getData(userId: string) {
   const data = await prisma.user.findUnique({
