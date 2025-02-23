@@ -20,7 +20,6 @@ export default async function Home() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <Navbar />
       <Hero />
-      <HeroVideoDialogDemo />
       <Logos />
       <Features />
       <MarqueeDemo />
