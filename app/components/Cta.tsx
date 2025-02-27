@@ -7,7 +7,7 @@ export function CTA() {
         What are you waiting for?
       </h2>
       <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-sm mx-auto">
-        Start using CalFudail to make it easy for your clients to schedule a meeting with
+        Start using CalEasy to make it easy for your clients to schedule a meeting with
         you!
       </p>
       <div className="mt-6">

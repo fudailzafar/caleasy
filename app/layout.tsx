@@ -18,8 +18,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "CalFudail",
-  description: "Time Simplified, Life Amplified!",
+  title: "CalEasy",
+  description: "Work Simplified, Time Amplified!",
 };
 
 export default function RootLayout({

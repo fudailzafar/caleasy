@@ -5,13 +5,13 @@ const features = [
   {
     name: "Sign up for free",
     description:
-      "Join CalFudail today at no cost, enjoying seamless, effortless booking and appointment management with our streamlined scheduling platform.",
+      "Join CalEasy today at no cost, enjoying seamless, effortless booking and appointment management with our streamlined scheduling platform.",
     icon: PartyPopper,
   },
   {
     name: "Blazing fast",
     description:
-      "Experience blazing lightning speed performance with calfudail, where quick load times and rapid scheduling guarantee efficient appointment booking.",
+      "Experience blazing lightning speed performance with CalEasy, where quick load times and rapid scheduling guarantee efficient appointment booking.",
     icon: CloudRain,
   },
   {
@@ -21,9 +21,9 @@ const features = [
     icon: ShieldCheck,
   },
   {
-    name: "Easy to use",
+    name: "Our upcoming features",
     description:
-      "Calfudail's intuitive interface makes appointment scheduling effortless, allowing users to navigate, manage, and customize bookings with absolute ease.",
+      "An AI model that processes messages from any messaging app, verifies the host's availability, and sends a confirmation response.",
     icon: Users,
   },
 ];
@@ -37,9 +37,9 @@ export function Features() {
           Schedule meetings in minutes!
         </h1>
         <p className="mt-6 text-base leading-snug text-muted-foreground">
-          With CalMarshal you can schedule meetings in minutes. We make it easy
-          for you to schule meetingsin minutes. The meetings are very fast and
-          easy to schedule.
+          With CalEasy you can schedule meetings in minutes. We make it easy for
+          you to schule meetings in minutes. The meetings are very fast and easy
+          to schedule.
         </p>
       </div>
 

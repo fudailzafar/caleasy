@@ -38,7 +38,7 @@ export default function OnboardingRoute() {
       <Card>
         <CardHeader>
           <CardTitle>
-            Welcome to Cal<span className="text-primary">Fudail</span>
+            Welcome to Cal<span className="text-primary">Easy</span>
           </CardTitle>
           <CardDescription>
             We need the following information to set up your profile!
@@ -60,7 +60,7 @@ export default function OnboardingRoute() {
               <Label>Username</Label>
               <div className="flex rounded-md">
                 <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-muted bg-muted text-sm text-muted-foreground">
-                  CalFudail.com/
+                  CalEasy.com/
                 </span>
                 <Input
                   placeholder="example-user-1"

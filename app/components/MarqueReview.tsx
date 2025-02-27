@@ -5,7 +5,7 @@ const reviews = [
   {
     name: "Alice",
     username: "@alice",
-    body: "CalFudail has completely streamlined my meeting scheduling. No more back-and-forth emails!",
+    body: "CalEasy has completely streamlined my meeting scheduling. No more back-and-forth emails!",
     img: "https://avatar.vercel.sh/alice",
   },
   {
@@ -87,7 +87,7 @@ export function MarqueeDemo() {
           Effortless Scheduling, Happy Users!
         </h1>
         <p className="mt-6 text-base leading-snug text-muted-foreground">
-          See why professionals love CalFudail! From seamless integrations to
+          See why professionals love CalEasy! From seamless integrations to
           AI-powered scheduling, our users enjoy a smarter way to book
           meetings—without the hassle.
         </p>
