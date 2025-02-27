@@ -60,9 +60,9 @@ export default async function DashboardPage() {
     <>
       {data.eventType.length === 0 ? (
         <EmptyState
-          title="You have no Event Types"
-          description="You can create your first event type by clicking the button below"
-          buttonText="Add event type"
+          title="You have no Events"
+          description="You can create your first event by clicking the button below"
+          buttonText="Add event"
           href="/dashboard/new"
         />
       ) : (
@@ -70,10 +70,10 @@ export default async function DashboardPage() {
           <div className="flex items-center justify-between px-2">
             <div className="hidden sm:grid gap-y-1">
               <h1 className="text-3xl md:text-4xl font-semibold">
-                Event Types
+                Events
               </h1>
               <p className="text-muted-foreground ">
-                Create and manage your event types right here.
+                Create and manage your events right here.
               </p>
             </div>
             <Button asChild>

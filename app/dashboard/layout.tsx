@@ -23,8 +23,8 @@ import { redirect } from "next/navigation";
 import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
-  title: "CalFudail",
-  description: "Time Simplified, Life Amplified!",
+  title: "CalEasy",
+  description: "Work Simplified, Time Amplified!",
 };
 
 async function getData(userId: string) {
@@ -66,7 +66,7 @@ export default async function DashboardLayout({
               <Link href="/" className="flex items-center gap-2">
                 <Image src={Logo} alt="Logo" className="size-8" />
                 <p className="text-xl font-bold">
-                  Cal<span className="text-primary">Fudail</span>
+                  Cal<span className="text-primary">Easy</span>
                 </p>
               </Link>
             </div>

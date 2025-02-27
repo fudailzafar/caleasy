@@ -16,17 +16,17 @@ export function Hero() {
               `inline animate-gradient bg-gradient-to-r from-[#80d0ff] via-[#407bff] to-[#002f6c] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
             )}
           >
-            Introducing CalFudail 1.0
+            Introducing CalEasy 1.0
           </span>
           <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
         </AnimatedGradientText>
 
         <h1 className="mt-8 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium leading-none">
-          Time simplified,{" "}
-          <span className="block text-primary md:-mt-2">Life Amplified!</span>
+          Work simplified,{" "}
+          <span className="block text-primary md:-mt-2">Time Amplified!</span>
         </h1>
         <p className="max-w-xl mx-auto mt-4 lg:text-lg text-muted-foreground">
-          Scheduling meetings shouldn’t be a hassle. At CalFudail, we streamline
+          Scheduling meetings shouldn’t be a hassle. At CalEasy, we streamline
           the process so your clients can effortlessly book time with
           you—allowing you to focus on what truly matters.
         </p>
