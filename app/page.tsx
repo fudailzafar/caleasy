@@ -9,6 +9,7 @@ import { CTA } from "./components/Cta";
 import { MarqueeDemo } from "./components/MarqueReview";
 import { HeroVideoDialogDemo } from "./components/HeroVideoDialog";
 import { AccordionDemo } from "./components/Accordition";
+import { FooterDemo } from "./components/Footer";
 
 export default async function Home() {
   const session = await auth();
@@ -25,6 +26,7 @@ export default async function Home() {
       <MarqueeDemo />
       <CTA />
       <AccordionDemo />
+      <FooterDemo />
     </div>
   );
 }
