@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CalFudail
+
+CalFudail is a modern meeting scheduling application that offers better functionality than existing tools like Calendly or Cal.com. It simplifies the process of booking meetings, managing availability, and handling multiple tenants with ease.
+
+## Features
+
+- **Multi-Tenant Support** – Users can have unique usernames and custom booking links.
+- **Seamless Scheduling** – Easily set up meetings with customizable availability.
+- **Timezone Support** – Automatically adjusts meeting times based on user timezones.
+- **Integrations** – (Planned) Connect with Google Calendar, Outlook, and other services.
+- **Custom Branding** – Personalize booking pages with user preferences.
+- **Email & Notification System** – (Planned) Automatic reminders for scheduled meetings.
+
+## Tech Stack
+
+- **Frontend:** Next.js, React, Tailwind CSS
+- **Backend:** Node.js, Express, PostgreSQL
+- **Hosting:** Vercel (Frontend), Railway/Fly.io (Backend)
+- **Authentication:** NextAuth.js / OAuth support
+- **Database:** PostgreSQL with Prisma ORM
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js (v18+)
+- PostgreSQL
+- Vercel CLI (for deployment)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Installation
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/calfudail.git
+   cd calfudail
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Set up environment variables:
+   Create a `.env` file in the root directory and add the following:
+   ```env
+   DATABASE_URL=your_database_url
+   NEXTAUTH_SECRET=your_secret_key
+   NEXTAUTH_URL=http://localhost:3000
+   ```
 
-## Learn More
+4. Run database migrations:
+   ```sh
+   npx prisma migrate dev
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+5. Start the development server:
+   ```sh
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+6. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+### Deploy to Vercel
+1. Install Vercel CLI:
+   ```sh
+   npm install -g vercel
+   ```
+2. Link the project:
+   ```sh
+   vercel
+   ```
+3. Deploy:
+   ```sh
+   vercel --prod
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Roadmap
+- [ ] Google Calendar & Outlook Integration
+- [ ] Enhanced UI/UX Improvements
+- [ ] Payment Integration for Premium Features
+- [ ] Webhooks & API Support
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contributing
+Pull requests are welcome! Please open an issue first to discuss any changes.
+
+## License
+MIT License. See `LICENSE` for details.
+
+## Contact
+For questions or feedback, reach out at [your-email@example.com](mailto:your-email@example.com).
