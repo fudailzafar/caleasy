@@ -90,8 +90,7 @@ export const Footer = React.forwardRef<HTMLDivElement, FooterProps>(
           {copyright && (
             <div className="mt-20 border-t pt-6 pb-8">
               <p className="text-xs text-foreground/55">{copyright}</p>
-            </div>
-          )}
+            </div>          )}
         </div>
       </div>
     );
