@@ -9,7 +9,7 @@ export function AccordionDemo() {
   return (
     <Accordion type="single" collapsible className="w-[90%] md:w-[65%] mx-auto">
       <AccordionItem value="item-2">
-        <AccordionTrigger>
+        <AccordionTrigger className="text-xs sm:text-lg">
           Does CalEasy support automatic time zone detection?
         </AccordionTrigger>
         <AccordionContent>
@@ -19,7 +19,7 @@ export function AccordionDemo() {
       </AccordionItem>
 
       <AccordionItem value="item-3">
-        <AccordionTrigger>
+        <AccordionTrigger className="text-xs sm:text-lg">
           Can I integrate CalEasy with Google and Outlook?
         </AccordionTrigger>
         <AccordionContent>
@@ -29,7 +29,7 @@ export function AccordionDemo() {
       </AccordionItem>
 
       <AccordionItem value="item-4">
-        <AccordionTrigger>
+        <AccordionTrigger className="text-xs sm:text-lg">
           Does CalEasy offer AI-powered scheduling?
         </AccordionTrigger>
         <AccordionContent>
@@ -39,7 +39,9 @@ export function AccordionDemo() {
       </AccordionItem>
 
       <AccordionItem value="item-5">
-        <AccordionTrigger>Can I personalize my booking links?</AccordionTrigger>
+        <AccordionTrigger className="text-xs sm:text-lg">
+          Can I personalize my booking links?
+        </AccordionTrigger>
         <AccordionContent>
           Yes! You can create branded, customizable booking links with your
           name, company, and meeting types.
@@ -47,7 +49,9 @@ export function AccordionDemo() {
       </AccordionItem>
 
       <AccordionItem value="item-6">
-        <AccordionTrigger>Is CalEasy free to use?</AccordionTrigger>
+        <AccordionTrigger className="text-xs sm:text-lg">
+          Is CalEasy free to use?
+        </AccordionTrigger>
         <AccordionContent>
           CalEasy offers a free tier with essential features. For premium
           features like AI scheduling and custom branding, we offer flexible
