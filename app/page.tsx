@@ -21,11 +21,32 @@ export default async function Home() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <Navbar />
       <Hero />
-      <Logos />
-      <Features />
-      <MarqueeDemo />
-      <CTA />
-      <AccordionDemo />
+
+      {/* Logos Section */}
+      <div id="logos">
+        <Logos />
+      </div>
+
+      {/* Features Section */}
+      <div id="features">
+        <Features />
+      </div>
+
+      {/* Testimonials Section */}
+      <div id="testimonials">
+        <MarqueeDemo />
+      </div>
+
+      {/* Call to Action Section */}
+      <div id="cta">
+        <CTA />
+      </div>
+
+      {/* FAQ Section */}
+      <div id="faqs">
+        <AccordionDemo />
+      </div>
+
       <FooterDemo />
     </div>
   );

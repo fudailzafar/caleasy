@@ -69,7 +69,7 @@ export function FooterDemo() {
         },
         {
           name: "Discord",
-          href: "#",
+          href: "https://discord.com",
         },
       ]}
       columns={[
@@ -77,24 +77,24 @@ export function FooterDemo() {
           title: "Product",
           links: [
             {
-              name: "Features",
+              name: "Home",
               Icon: Blocks,
+              href: "/",
+            },
+            {
+              name: "Features",
+              Icon: Webhook,
               href: "#features",
             },
             {
-              name: "Pricing",
+              name: "Testimonials",
               Icon: CreditCard,
-              href: "#pricing",
+              href: "#testimonials",
             },
             {
-              name: "Integrations",
-              Icon: Webhook,
-              href: "#integrations",
-            },
-            {
-              name: "API Documentation",
+              name: "FAQs",
               Icon: CodeXml,
-              href: "/docs/api",
+              href: "#faqs",
             },
           ],
         },
@@ -102,19 +102,19 @@ export function FooterDemo() {
           title: "Compare",
           links: [
             {
-              name: "Plausible",
+              name: "Calendly",
               Icon: PlausibleIcon,
-              href: "/compare/plausible",
+              href: "https://calendly.com",
             },
             {
-              name: "Matomo",
+              name: "Cal.com",
               Icon: MatomoIcon,
-              href: "/compare/matomo",
+              href: "https://cal.com",
             },
             {
-              name: "Google Analytics",
+              name: "Zoho Bookings",
               Icon: GoogleAnalyticsIcon,
-              href: "/compare/google-analytics",
+              href: "https://www.zoho.com/bookings/",
             },
           ],
         },
