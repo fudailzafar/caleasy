@@ -88,4 +88,4 @@ Pull requests are welcome! Please open an issue first to discuss any changes.
 MIT License. See `LICENSE` for details.
 
 ## Contact
-For questions or feedback, reach out at [your-email@example.com](mailto:your-email@example.com).
+For questions or feedback, reach out at [fudail.zafar@gmail.com](mailto:fudail.zafar@gmail.com).
