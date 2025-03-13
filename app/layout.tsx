@@ -20,6 +20,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "CalEasy",
   description: "Work Simplified, Time Amplified!",
+  icons: "/logo.png"
 };
 
 export default function RootLayout({
