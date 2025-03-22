@@ -30,7 +30,7 @@ CalFudail is a modern meeting scheduling application that offers better function
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/calfudail.git
+   git clone https://github.com/fudailzafar/calfudail.git
    cd calfudail
    ```
 
