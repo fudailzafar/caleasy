@@ -1,6 +1,6 @@
-# CalFudail
+# CalEasy
 
-CalFudail is a modern meeting scheduling application that offers better functionality than existing tools like Calendly or Cal.com. It simplifies the process of booking meetings, managing availability, and handling multiple tenants with ease.
+CalEasy is a modern meeting scheduling application that offers better functionality than existing tools like Calendly or Cal.com. It simplifies the process of booking meetings, managing availability, and handling multiple tenants with ease.
 
 ## Features
 
@@ -13,17 +13,16 @@ CalFudail is a modern meeting scheduling application that offers better function
 
 ## Tech Stack
 
-- **Frontend:** Next.js, React, Tailwind CSS
-- **Backend:** Node.js, Express, PostgreSQL
-- **Hosting:** Vercel (Frontend), Railway/Fly.io (Backend)
+- **Frontend:** Next.js, React, Tailwind CSS, ShadcnUI
+- **Backend:** Node.js, Express, Supabase
+- **Hosting:** Vercel (Frontend), Vercel (Backend)
 - **Authentication:** NextAuth.js / OAuth support
-- **Database:** PostgreSQL with Prisma ORM
+- **Database:** Supabase with Prisma ORM
 
 ## Getting Started
 
 ### Prerequisites
 - Node.js (v18+)
-- PostgreSQL
 - Vercel CLI (for deployment)
 
 ### Installation
