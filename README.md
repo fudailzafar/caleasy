@@ -74,12 +74,6 @@ CalEasy is a modern meeting scheduling application that offers better functional
    vercel --prod
    ```
 
-## Roadmap
-- [ ] Google Calendar & Outlook Integration
-- [ ] Enhanced UI/UX Improvements
-- [ ] Payment Integration for Premium Features
-- [ ] Webhooks & API Support
-
 ## Contributing
 Pull requests are welcome! Please open an issue first to discuss any changes.
 
