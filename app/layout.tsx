@@ -29,11 +29,11 @@ export const metadata = {
   openGraph: {
     title: "CalEasy",
     description: "Work Simplified, Time Amplified!",
-    url: "https://stockhub.fun",
+    url: "https://calfudail.vercel.app",
     siteName: "StockHub",
     images: [
       {
-        url: "https://stockhub.fun/og-stockhub.png",
+        url: "https://calfudail.vercel.app/better.png",
         width: 800,
         height: 600,
         alt: "CalEasy Logo and Tagline",
@@ -46,10 +46,10 @@ export const metadata = {
     card: "summary_large_image",
     title: "CalEasy",
     description: "Work Simplified, Time Amplified!",
-    images: ["https://stockhub.fun/og-stockhub.png"],
+    images: ["https://calfudail.vercel.app/better.png"],
   },
   alternates: {
-    canonical: "https://stockhub.fun",
+    canonical: "https://calfudail.vercel.app",
   },
   robots: "index, follow",
 };
