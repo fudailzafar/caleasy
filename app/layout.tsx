@@ -34,8 +34,8 @@ export const metadata = {
     images: [
       {
         url: "https://calfudail.vercel.app/better.png",
-        width: 800,
-        height: 600,
+        width: 1200,
+        height: 630,
         alt: "CalEasy Logo and Tagline",
       },
     ],
