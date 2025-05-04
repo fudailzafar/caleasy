@@ -7,8 +7,7 @@ import { Logos } from "./components/Logos";
 import { Features } from "./components/Features";
 import { CTA } from "./components/Cta";
 import { MarqueeDemo } from "./components/MarqueReview";
-import { HeroVideoDialogDemo } from "./components/HeroVideoDialog";
-import { AccordionDemo } from "./components/Accordition";
+import BasicFAQ from "./components/Faq";
 import { FooterDemo } from "./components/Footer";
 
 export default async function Home() {
@@ -44,7 +43,7 @@ export default async function Home() {
 
       {/* FAQ Section */}
       <div id="faqs">
-        <AccordionDemo />
+        <BasicFAQ />
       </div>
 
       <FooterDemo />

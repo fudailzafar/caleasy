@@ -1,25 +1,16 @@
 import Image from "next/image";
 import HeroImage from "@/public/better.png";
 import { AuthModal } from "./AuthModal";
-import { AnimatedGradientText } from "@/components/magicui/animated-gradient-text";
-import { cn } from "@/lib/utils";
-import { ChevronRight } from "lucide-react";
+import { TiltChipLinkExample } from "@/app/components/TiltChip";
+
 
 export function Hero() {
   return (
     <section className="relative flex flex-col items-center justify-center py-12 lg:py-16">
       <div className="text-center">
-        <AnimatedGradientText>
-          🎉 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{" "}
-          <span
-            className={cn(
-              `inline animate-gradient bg-gradient-to-r from-[#80d0ff] via-[#407bff] to-[#002f6c] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
-            )}
-          >
-            Introducing CalEasy 1.0
-          </span>
-          <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
-        </AnimatedGradientText>
+        <div className="flex items-center justify-center w-full max-w-2xl mx-auto mb-4 space-x-2">
+          <TiltChipLinkExample />
+        </div>
 
         <h1 className="mt-8 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium leading-none">
           Work simplified,{" "}
@@ -91,10 +82,10 @@ export function Hero() {
           </defs>
         </svg>
         <Image
-        src={HeroImage}
-        alt="Hero Image"
-        className="relative object-cover w-full border rounded-lg shadow-2xl lg:rounded-2xl"
-      />
+          src={HeroImage}
+          alt="Hero Image"
+          className="relative object-cover w-full border rounded-lg shadow-2xl lg:rounded-2xl"
+        />
       </div>
     </section>
   );
