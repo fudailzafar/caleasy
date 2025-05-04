@@ -17,10 +17,41 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
+
+
+export const metadata = {
   title: "CalEasy",
   description: "Work Simplified, Time Amplified!",
-  icons: "/logo.png"
+  icons: "/logo.png",
+  keywords:
+    "CalEasy, scheduling, meetings, productivity, time management, calendar",
+  author: "Fudail",
+  openGraph: {
+    title: "CalEasy",
+    description: "Work Simplified, Time Amplified!",
+    url: "https://stockhub.fun",
+    siteName: "StockHub",
+    images: [
+      {
+        url: "https://stockhub.fun/og-stockhub.png",
+        width: 800,
+        height: 600,
+        alt: "CalEasy Logo and Tagline",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CalEasy",
+    description: "Work Simplified, Time Amplified!",
+    images: ["https://stockhub.fun/og-stockhub.png"],
+  },
+  alternates: {
+    canonical: "https://stockhub.fun",
+  },
+  robots: "index, follow",
 };
 
 export default function RootLayout({
