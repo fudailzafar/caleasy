@@ -20,17 +20,17 @@ const geistMono = localFont({
 
 
 export const metadata = {
-  title: "CalEasy",
-  description: "Work Simplified, Time Amplified!",
+  title: "CalEasy - Simplifying Scheduling",
+  description: "Create personalized booking links and schedule meetings effortlessly with CalEasy – your modern, no-hassle scheduling solution.",
   icons: "/logo.png",
   keywords:
     "CalEasy, scheduling, meetings, productivity, time management, calendar",
   author: "Fudail",
   openGraph: {
-    title: "CalEasy",
-    description: "Work Simplified, Time Amplified!",
+    title: "CalEasy - Simplifying Scheduling",
+    description: "Create personalized booking links and schedule meetings effortlessly with CalEasy – your modern, no-hassle scheduling solution.",
     url: "https://calfudail.vercel.app",
-    siteName: "StockHub",
+    siteName: "CalEasy",
     images: [
       {
         url: "https://calfudail.vercel.app/better.png",
@@ -44,8 +44,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CalEasy",
-    description: "Work Simplified, Time Amplified!",
+    title: "CalEasy - Simplifying Scheduling",
+    description: "Create personalized booking links and schedule meetings effortlessly with CalEasy – your modern, no-hassle scheduling solution.",
     images: ["https://calfudail.vercel.app/better.png"],
   },
   alternates: {
