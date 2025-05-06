@@ -9,6 +9,7 @@ import { CTA } from "./components/Cta";
 import { MarqueeDemo } from "./components/MarqueReview";
 import BasicFAQ from "./components/Faq";
 import { FooterDemo } from "./components/Footer";
+import ScrollingTestimonials from "./components/ScrollingTestimonials";
 
 export default async function Home() {
   const session = await auth();
@@ -33,7 +34,7 @@ export default async function Home() {
 
       {/* Testimonials Section */}
       <div id="testimonials">
-        <MarqueeDemo />
+        <ScrollingTestimonials />
       </div>
 
       {/* Call to Action Section */}

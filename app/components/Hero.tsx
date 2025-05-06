@@ -22,7 +22,7 @@ export function Hero() {
           you—allowing you to focus on what truly matters.
         </p>
 
-        <div className="mt-5 mb-12">
+        <div className="mt-5 mb-12 flex items-center justify-center">
           <AuthModal />
         </div>
       </div>
