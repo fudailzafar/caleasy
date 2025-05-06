@@ -10,7 +10,7 @@ export function CTA() {
         Start using CalEasy to make it easy for your clients to schedule a meeting with
         you!
       </p>
-      <div className="mt-6">
+      <div className="mt-6 flex justify-center">
         <AuthModal />
       </div>
       <svg
