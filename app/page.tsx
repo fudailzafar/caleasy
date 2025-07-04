@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Navbar } from "./components/Navbar";
 import { auth } from "./lib/auth";
 import { redirect } from "next/navigation";
@@ -6,7 +5,6 @@ import { Hero } from "./components/Hero";
 import { Logos } from "./components/Logos";
 import { Features } from "./components/Features";
 import { CTA } from "./components/Cta";
-import { MarqueeDemo } from "./components/MarqueReview";
 import BasicFAQ from "./components/Faq";
 import { FooterDemo } from "./components/Footer";
 import ScrollingTestimonials from "./components/ScrollingTestimonials";
