@@ -58,9 +58,6 @@ const TestimonialList = ({ list, reverse = false, duration = 50 }) => {
               <span className="block mb-3 text-sm font-medium">{t.title}</span>
               <span className="block text-sm text-slate-300">{t.info}</span>
             </div>
-            <span className="text-7xl absolute top-2 right-2 text-slate-700">
-              "
-            </span>
           </div>
         );
       })}
