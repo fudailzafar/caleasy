@@ -1,6 +1,6 @@
 "use client";
 
-import { Switch } from "@/components/ui/switch";
+import { Switch } from "@/app/components/ui/switch";
 import { useFormState } from "react-dom";
 import { UpdateEventTypeStatusAction } from "../actions";
 import { useEffect, useTransition } from "react";

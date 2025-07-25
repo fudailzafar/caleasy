@@ -11,6 +11,7 @@ import {
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { nylas } from "./lib/nylas";
+import { signIn } from "./lib/auth";
 
 export async function OnboardingAction(prevState: any, formData: FormData) {
   const session = await requireUser();
@@ -348,4 +349,12 @@ export async function DeleteEventTypeAction(formData: FormData) {
   });
 
   return redirect("/dashboard");
+}
+
+export async function signInGoogle() {
+  await signIn("google");
+}
+
+export async function signInGithub() {
+  await signIn("github");
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
+import { DropdownMenuItem } from "@/app/components/ui/dropdown-menu";
 import { Link2 } from "lucide-react";
 import { toast } from "sonner";
 

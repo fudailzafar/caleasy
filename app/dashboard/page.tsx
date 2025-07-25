@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import prisma from "../lib/db";
 import { requireUser } from "../lib/hooks";
 import { EmptyState } from "../components/EmptyState";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/components/ui/button";
 import Link from "next/link";
 import {
   ExternalLink,
@@ -12,8 +12,6 @@ import {
   Trash,
   Users2,
 } from "lucide-react";
-import { Switch } from "@/components/ui/switch";
-import { ButtonGroup } from "@/components/ui/ButtonGroup";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,7 +20,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/app/components/ui/dropdown-menu";
 import { CopyLinkMenuItem } from "../components/CopyLinkMenu";
 import { MenuActiveSwitch } from "../components/EventTypeSwitcher";
 

@@ -13,10 +13,10 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+} from "@/app/components/ui/card";
+import { Label } from "@/app/components/ui/label";
+import { Input } from "@/app/components/ui/input";
+import { Textarea } from "@/app/components/ui/textarea";
 import {
   Select,
   SelectContent,
@@ -25,9 +25,9 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { ButtonGroup } from "@/components/ui/ButtonGroup";
-import { Button } from "@/components/ui/button";
+} from "@/app/components/ui/select";
+import { ButtonGroup } from "@/app/components/ui/ButtonGroup";
+import { Button } from "@/app/components/ui/button";
 import Link from "next/link";
 import { SubmitButton } from "./SubmitButtons";
 

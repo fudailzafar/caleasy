@@ -1,11 +1,11 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@/app/components/ui/card";
 import VideoGif from "@/public/work-is-almost-over-happy.gif";
 import { CalendarCheck2 } from "lucide-react";
 import Image from "next/image";

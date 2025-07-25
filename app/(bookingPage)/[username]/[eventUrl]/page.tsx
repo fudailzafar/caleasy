@@ -3,12 +3,12 @@ import { RenderCalendar } from "@/app/components/bookingForm/RenderCalender";
 import { TimeTable } from "@/app/components/bookingForm/TimeTable";
 import { SubmitButton } from "@/app/components/SubmitButtons";
 import prisma from "@/app/lib/db";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Separator } from "@/components/ui/separator";
+import { Card, CardContent } from "@/app/components/ui/card";
+import { Input } from "@/app/components/ui/input";
+import { Label } from "@/app/components/ui/label";
 import { CalendarX2, Clock, VideoIcon } from "lucide-react";
 import { notFound } from "next/navigation";
+import { Separator } from "@/app/components/ui/seperator";
 
 async function getData(eventUrl: string, userName: string) {
   const data = await prisma.eventType.findFirst({
