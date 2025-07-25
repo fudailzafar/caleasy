@@ -1,13 +1,17 @@
-import { Navbar } from "./components/Navbar";
 import { auth } from "./lib/auth";
 import { redirect } from "next/navigation";
-import { Hero } from "./components/Hero";
-import { Logos } from "./components/Logos";
-import { Features } from "./components/Features";
-import { CTA } from "./components/Cta";
-import BasicFAQ from "./components/Faq";
-import { FooterDemo } from "./components/Footer";
-import ScrollingTestimonials from "./components/ScrollingTestimonials";
+import Hero from "./components/sections/Hero";
+import Logos from "./components/sections/Logos";
+import Problem from "./components/sections/Problem";
+import Solution from "./components/sections/Solution";
+import HowItWorks from "./components/sections/HowItWorks";
+import Features from "./components/sections/Features";
+import Testimonials from "./components/sections/Testimonials";
+import FAQ from "./components/sections/FAQ";
+import Blog from "./components/sections/Blog";
+import Footer from "./components/sections/Footer";
+import CTA from "./components/sections/CTA";
+import Header from "./components/sections/Header";
 
 export default async function Home() {
   const session = await auth();
@@ -16,36 +20,19 @@ export default async function Home() {
     return redirect("/dashboard");
   }
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <Navbar />
+    <main>
+      <Header />
       <Hero />
-
-      {/* Logos Section */}
-      <div id="logos">
-        <Logos />
-      </div>
-
-      {/* Features Section */}
-      <div id="features">
-        <Features />
-      </div>
-
-      {/* Testimonials Section */}
-      <div id="testimonials">
-        <ScrollingTestimonials />
-      </div>
-
-      {/* Call to Action Section */}
-      <div id="cta">
-        <CTA />
-      </div>
-
-      {/* FAQ Section */}
-      <div id="faqs">
-        <BasicFAQ />
-      </div>
-
-      <FooterDemo />
-    </div>
+      <Logos />
+      <Problem />
+      <Solution />
+      <HowItWorks />
+      <Features />
+      <Testimonials />
+      <FAQ />
+      <Blog />
+      <CTA />
+      <Footer />
+    </main>
   );
 }

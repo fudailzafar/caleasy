@@ -7,9 +7,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from "@/app/components/ui/card";
+import { Input } from "@/app/components/ui/input";
+import { Label } from "@/app/components/ui/label";
 import { SubmitButton } from "./SubmitButtons";
 import { useFormState } from "react-dom";
 import { SettingsAction } from "../actions";
@@ -17,8 +17,7 @@ import { useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
 import { settingsSchema } from "../lib/zodSchemas";
 import { useState } from "react";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/components/ui/button";
 import { X } from "lucide-react";
 import { UploadDropzone } from "../lib/uploadthing";
 import { toast } from "sonner";

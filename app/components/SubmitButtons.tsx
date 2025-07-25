@@ -1,12 +1,12 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/components/ui/button";
 import { useFormStatus } from "react-dom";
 import GoogleLogo from "@/public/google.svg";
 import Image from "next/image";
 import { Loader2 } from "lucide-react";
 import GitHubLogo from "@/public/github.svg";
-import { cn } from "@/lib/utils";
+import { cn } from "@/app/lib/utils";
 
 interface iAppProps {
   text: string;

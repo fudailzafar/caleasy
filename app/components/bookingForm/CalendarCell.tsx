@@ -7,7 +7,7 @@ import {
   getLocalTimeZone,
   isSameMonth,
 } from "@internationalized/date";
-import { cn } from "@/lib/utils";
+import { cn } from "@/app/lib/utils";
 
 export function CalendarCell({
   state,

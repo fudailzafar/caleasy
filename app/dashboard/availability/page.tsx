@@ -10,7 +10,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@/app/components/ui/card";
 import {
   Select,
   SelectContent,
@@ -18,8 +18,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Switch } from "@/components/ui/switch";
+} from "@/app/components/ui/select";
+import { Switch } from "@/app/components/ui/switch";
 import { notFound } from "next/navigation";
 
 async function getData(userId: string) {

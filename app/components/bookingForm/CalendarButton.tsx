@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/components/ui/button";
 import { AriaButtonProps, useButton } from "@react-aria/button";
 import { CalendarState } from "@react-stately/calendar";
 import { mergeProps } from "@react-aria/utils";

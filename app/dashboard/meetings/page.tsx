@@ -10,10 +10,10 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+} from "@/app/components/ui/card";
 import { format, fromUnixTime } from "date-fns";
 import { Video } from "lucide-react";
+import { Separator } from "@/app/components/ui/seperator";
 
 async function getData(userId: string) {
   const userData = await prisma.user.findUnique({
