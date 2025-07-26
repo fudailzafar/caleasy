@@ -1,15 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-import { Icons } from "@/app/components/icons";
 import HeroVideoDialog from "@/app/components/magicui/hero-video";
-import { buttonVariants } from "@/app/components/ui/button";
-import { cn } from "@/app/lib/utils";
-import Link from "next/link";
 import { AuthModal } from "../AuthModal";
+import { easeInOut } from "framer-motion";
 
-const ease = [0.16, 1, 0.3, 1];
+const ease = easeInOut;
 
 function HeroPill() {
   return (
@@ -97,10 +93,10 @@ function HeroCTA() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.8, ease }}
       >
-        <AuthModal text={"Get Started Today"}/>
+        <AuthModal text={"Get Started"} />
       </motion.div>
       <motion.p
-      id="video"
+        id="video"
         className="mt-5 text-sm text-muted-foreground"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -115,7 +111,6 @@ function HeroCTA() {
 function HeroImage() {
   return (
     <motion.div
-      
       className="relative mx-auto flex w-full items-center justify-center"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}

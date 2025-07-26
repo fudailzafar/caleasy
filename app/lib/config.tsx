@@ -32,7 +32,7 @@ export const siteConfig = {
           {
             href: "/#solution",
             title: "Time Optimization",
-            description: "We're saved 15+ hours soo far.",
+            description: "Saved 15+ hours soo far.",
           },
           {
             href: "/#solution",
@@ -59,7 +59,8 @@ export const siteConfig = {
           {
             title: "More stuff...",
             href: "/#features2",
-            description: "For people who would like to understand the plaform even better.",
+            description:
+              "For people who would like to understand the plaform even better.",
           },
           {
             title: "Changelog",
@@ -74,8 +75,7 @@ export const siteConfig = {
           {
             title: "Contact",
             href: "/#FAQ",
-            description:
-              "Have more queries? Click here.",
+            description: "Have more queries? Click here.",
           },
         ],
       },
@@ -100,9 +100,9 @@ export const siteConfig = {
       question: "How can I get started with CalEasy?",
       answer: (
         <span>
-          You can get started with CalEasy by signing up for an account on our
+    {`      You can get started with CalEasy by signing up for an account on our
           website, creating a meeting link, and copy the booking link. We're in
-          process to make an easy on-boarding tutorial.
+          process to make an easy on-boarding tutorial.`}
         </span>
       ),
     },
@@ -130,9 +130,9 @@ export const siteConfig = {
       question: "What kind of support does CalEasy provide?",
       answer: (
         <span>
-          As we're a small team, providing support is now a crucial aspect which
+          {`As we're a small team, providing support is now a crucial aspect which
           we're trying to improve. We currently provide e-mail support and
-          videos for assisting you in booking your meetings!
+          videos for assisting you in booking your meetings!`}
         </span>
       ),
     },
