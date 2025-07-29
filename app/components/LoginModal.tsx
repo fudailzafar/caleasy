@@ -7,7 +7,7 @@ import {
   DialogTrigger,
 } from "@/app/components/ui/dialog";
 import Image from "next/image";
-import Logo from "@/public/logo.png";
+import Logo from "@/public/favicon.png";
 import { GitHubAuthButton, GoogleAuthButton } from "./SubmitButtons";
 import { Button, buttonVariants } from "./ui/button";
 import { signInGithub, signInGoogle } from "../actions";

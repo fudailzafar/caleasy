@@ -10,7 +10,7 @@ import { AuthModal } from "../AuthModal";
 import { AnimatedThemeToggler } from "../magicui/animated-theme-toggler";
 import { LoginModal } from "../LoginModal";
 import Image from "next/image";
-import logo from "@/public/logo.png"
+import logo from "@/public/favicon.png";
 
 export default function Header() {
   const [addBorder, setAddBorder] = useState(false);
@@ -40,7 +40,9 @@ export default function Header() {
           className="relative mr-6 flex items-center space-x-2"
         >
           <Image src={logo} alt="Logo" className="size-10" />
-          <span className="font-bold text-xl">{siteConfig.name}</span>
+          <span className="font-bold text-xl">
+            Cal<span className="text-primary">Easy</span>
+          </span>
         </Link>
 
         <div className="hidden lg:block">
@@ -51,7 +53,7 @@ export default function Header() {
 
             <div className="gap-2 flex">
               <LoginModal />
-              <AuthModal text={"Sign Up"}/>
+              <AuthModal text={"Sign Up"} />
               <AnimatedThemeToggler />
             </div>
           </div>
