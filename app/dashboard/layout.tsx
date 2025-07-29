@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
 import type { Metadata } from "next";
-import Logo from "@/public/logo.png";
+import Logo from "@/public/favicon.png";
 import { DashboardLinks } from "../components/DashboardLinks";
 import { Sheet, SheetContent, SheetTrigger } from "@/app/components/ui/sheet";
 import { Button } from "@/app/components/ui/button";

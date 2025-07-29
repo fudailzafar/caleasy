@@ -22,7 +22,11 @@ const geistMono = localFont({
 export const metadata = {
   title: "CalEasy - Simplifying Scheduling",
   description: "Create personalized booking links and schedule meetings effortlessly with CalEasy – your modern, no-hassle scheduling solution.",
-  icons: "/logo.png",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
   keywords:
     "CalEasy, scheduling, meetings, productivity, time management, calendar",
   author: "Fudail",
