@@ -16,6 +16,7 @@ export const siteConfig = {
   header: [
     {
       trigger: "Features",
+      href: "/#solution",
       content: {
         main: {
           icon: <Icons.logo className="h-6 w-6" />,
@@ -44,6 +45,7 @@ export const siteConfig = {
     },
     {
       trigger: "Solutions",
+      href: "/#howitworks",
       content: {
         items: [
           {

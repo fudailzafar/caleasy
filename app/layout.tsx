@@ -23,9 +23,8 @@ export const metadata = {
   title: "CalEasy - Simplifying Scheduling",
   description: "Create personalized booking links and schedule meetings effortlessly with CalEasy – your modern, no-hassle scheduling solution.",
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
   },
   keywords:
     "CalEasy, scheduling, meetings, productivity, time management, calendar",

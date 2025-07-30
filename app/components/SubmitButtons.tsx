@@ -44,7 +44,7 @@ export function SubmitButton({ text, variant, className }: iAppProps) {
   );
 }
 
-export function GoogleAuthButton() {
+export function GoogleAuthButton({ text }: { text: String }) {
   const { pending } = useFormStatus();
 
   return (
@@ -56,14 +56,14 @@ export function GoogleAuthButton() {
       ) : (
         <Button variant="outline" className="w-full">
           <Image src={GoogleLogo} alt="Google Logo" className="size-4 mr-2" />
-          Sign in with Google
+          {text}
         </Button>
       )}
     </>
   );
 }
 
-export function GitHubAuthButton() {
+export function GitHubAuthButton({ text }: { text: String }) {
   const { pending } = useFormStatus();
 
   return (
@@ -75,7 +75,7 @@ export function GitHubAuthButton() {
       ) : (
         <Button variant="outline" className="w-full">
           <Image src={GitHubLogo} alt="GitHub Logo" className="size-4 mr-2" />
-          Sign in with GitHub
+          {text}
         </Button>
       )}
     </>
