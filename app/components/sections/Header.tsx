@@ -2,7 +2,6 @@
 
 import Drawer from "@/app/components/drawer";
 import Menu from "@/app/components/menu";
-import { siteConfig } from "@/app/lib/config";
 import { cn } from "@/app/lib/utils";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -10,7 +9,7 @@ import { AuthModal } from "../AuthModal";
 import { AnimatedThemeToggler } from "../magicui/animated-theme-toggler";
 import { LoginModal } from "../LoginModal";
 import Image from "next/image";
-import logo from "@/public/favicon.png";
+import logo from "@/public/favicon.ico";
 
 export default function Header() {
   const [addBorder, setAddBorder] = useState(false);

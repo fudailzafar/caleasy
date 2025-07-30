@@ -1,5 +1,3 @@
-import { Icons } from "@/app/components/icons";
-import { buttonVariants } from "@/app/components/ui/button";
 import {
   Drawer,
   DrawerContent,
@@ -16,6 +14,8 @@ import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { AuthModal } from "./AuthModal";
 import { ThemeToggle } from "./ThemeToggle";
 import { LoginModal } from "./LoginModal";
+import Image from "next/image";
+import logo from "@/public/favicon.ico";
 
 export default function drawerDemo() {
   return (
@@ -38,8 +38,10 @@ export default function drawerDemo() {
               title="brand-logo"
               className="relative mr-6 flex items-center space-x-2"
             >
-              <Icons.logo className="w-auto h-[40px]" />
-              <span className="font-bold text-xl">{siteConfig.name}</span>
+              <Image src={logo} alt="Logo" className="size-7" />
+              <span className="font-bold text-xl">
+                Cal<span className="text-primary">Easy</span>
+              </span>
             </Link>
           </div>
           <nav>
@@ -47,7 +49,9 @@ export default function drawerDemo() {
               {siteConfig.header.map((item, index) => (
                 <li key={index} className="my-3">
                   {item.trigger ? (
-                    <span className="font-semibold">{item.trigger}</span>
+                    <Link href={item.href || ""} className="font-semibold">
+                      {item.trigger}
+                    </Link>
                   ) : (
                     <Link href={item.href || ""} className="font-semibold">
                       {item.label}
@@ -60,7 +64,7 @@ export default function drawerDemo() {
         </DrawerHeader>
         <DrawerFooter>
           <LoginModal />
-          <AuthModal text={"Get Started Today"}/>
+          <AuthModal text={"Get Started Today"} />
         </DrawerFooter>
       </DrawerContent>
     </Drawer>

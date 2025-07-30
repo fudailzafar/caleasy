@@ -7,7 +7,7 @@ import {
   DialogTrigger,
 } from "@/app/components/ui/dialog";
 import Image from "next/image";
-import Logo from "@/public/favicon.png";
+import Logo from "@/public/favicon.ico";
 import { GitHubAuthButton, GoogleAuthButton } from "./SubmitButtons";
 import { Button, buttonVariants } from "./ui/button";
 import { signInGithub, signInGoogle } from "../actions";
@@ -17,8 +17,13 @@ export function LoginModal() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className={cn(buttonVariants({ variant: "outline" }), "text-black dark:text-white")}>
-          Login 
+        <Button
+          className={cn(
+            buttonVariants({ variant: "outline" }),
+            "text-black dark:text-white"
+          )}
+        >
+          Login
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[360px]">
@@ -30,10 +35,10 @@ export function LoginModal() {
         </DialogHeader>
         <div className="flex flex-col mt-5 gap-3">
           <form action={signInGoogle} className="w-full">
-            <GoogleAuthButton />
+            <GoogleAuthButton text={"Log in with Google"} />
           </form>
           <form action={signInGithub}>
-            <GitHubAuthButton />
+            <GitHubAuthButton text={"Log in with GitHub"}/>
           </form>
         </div>
       </DialogContent>

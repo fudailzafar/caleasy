@@ -7,7 +7,7 @@ import {
   DialogTrigger,
 } from "@/app/components/ui/dialog";
 import Image from "next/image";
-import Logo from "@/public/favicon.png";
+import Logo from "@/public/favicon.ico";
 import { GitHubAuthButton, GoogleAuthButton } from "./SubmitButtons";
 import { cn } from "../lib/utils";
 import { Button, buttonVariants } from "./ui/button";
@@ -36,10 +36,10 @@ export function AuthModal({ text }: { text: string }) {
         </DialogHeader>
         <div className="flex flex-col mt-5 gap-3">
           <form action={signInGoogle} className="w-full">
-            <GoogleAuthButton />
+            <GoogleAuthButton text={"Sign up with Google"} />
           </form>
           <form action={signInGithub}>
-            <GitHubAuthButton />
+            <GitHubAuthButton text={"Sign up with GitHub"}/>
           </form>
         </div>
       </DialogContent>
