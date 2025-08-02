@@ -1,7 +1,9 @@
 import { Icons } from "@/app/components/icons";
 import { siteConfig } from "@/app/lib/config";
 import { ChevronRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import logo from "@/public/favicon.ico"
 
 export default function Footer() {
   return (
@@ -12,8 +14,10 @@ export default function Footer() {
           title={siteConfig.name}
           className="relative mr-6 flex items-center space-x-2"
         >
-          <Icons.logo className="w-auto h-[40px]" />
-          <span className="font-bold text-xl">{siteConfig.name}</span>
+          <Image src={logo} alt="Logo" className="size-10" />
+          <span className="font-bold text-xl">
+            Cal<span className="text-primary">Easy</span>
+          </span>
         </a>
 
         <div className="grid md:grid-cols-3 lg:grid-cols-4 sm:grid-cols-2 mt-8">

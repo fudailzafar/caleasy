@@ -21,6 +21,7 @@ import { Button } from "@/app/components/ui/button";
 import { X } from "lucide-react";
 import { UploadDropzone } from "../lib/uploadthing";
 import { toast } from "sonner";
+import Image from "next/image";
 
 interface iAppProps {
   fullName: string;
@@ -81,7 +82,7 @@ export function SettingsForm({ email, fullName, profileImage }: iAppProps) {
             />
             {currentProfileImage ? (
               <div className="relative size-16">
-                <img
+                <Image
                   src={currentProfileImage}
                   alt="Profile Image"
                   className="size-16 rounded-lg"
