@@ -9,6 +9,7 @@ import { Label } from "@/app/components/ui/label";
 import { CalendarX2, Clock, VideoIcon } from "lucide-react";
 import { notFound } from "next/navigation";
 import { Separator } from "@/app/components/ui/seperator";
+import Image from "next/image";
 
 async function getData(eventUrl: string, userName: string) {
   const data = await prisma.eventType.findFirst({
@@ -73,7 +74,7 @@ export default async function BookingFormRoute({
         <Card className="max-w-[600px] w-full">
           <CardContent className="p-5 md:grid md:grid-cols-[1fr,auto,1fr] gap-4">
             <div>
-              <img
+              <Image
                 src={data.User?.image as string}
                 alt="Profile Image of user"
                 className="size-10 rounded-full"
@@ -145,7 +146,7 @@ export default async function BookingFormRoute({
         <Card className="w-full max-w-[1000px] mx-auto">
           <CardContent className="p-5 md:grid md:grid-cols-[1fr,auto,1fr,auto,1fr] gap-4">
             <div>
-              <img
+              <Image
                 src={data.User?.image as string}
                 alt="Profile Image of user"
                 className="size-10 rounded-full"
