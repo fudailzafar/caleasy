@@ -29,8 +29,8 @@ CalEasy is a modern meeting scheduling application that offers better functional
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/fudailzafar/calfudail.git
-   cd calfudail
+   git clone https://github.com/fudailzafar/caleasy.git
+   cd caleasy
    ```
 
 2. Install dependencies:

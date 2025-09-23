@@ -32,11 +32,11 @@ export const metadata = {
   openGraph: {
     title: "CalEasy - Simplifying Scheduling",
     description: "Create personalized booking links and schedule meetings effortlessly with CalEasy – your modern, no-hassle scheduling solution.",
-    url: "https://calfudail.vercel.app",
+    url: "https://caleasy.vercel.app",
     siteName: "CalEasy",
     images: [
       {
-        url: "https://calfudail.vercel.app/og-image.png",
+        url: "https://caleasy.vercel.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "CalEasy Logo and Tagline",
@@ -49,10 +49,10 @@ export const metadata = {
     card: "summary_large_image",
     title: "CalEasy - Simplifying Scheduling",
     description: "Create personalized booking links and schedule meetings effortlessly with CalEasy – your modern, no-hassle scheduling solution.",
-    images: ["https://calfudail.vercel.app/og-image.png"],
+    images: ["https://caleasy.vercel.app/og-image.png"],
   },
   alternates: {
-    canonical: "https://calfudail.vercel.app",
+    canonical: "https://caleasy.vercel.app",
   },
   robots: "index, follow",
 };

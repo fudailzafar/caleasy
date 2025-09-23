@@ -25,7 +25,7 @@ export function Testimonial() {
                 />
               </svg>
               <span className="relative z-10 ">
-                Wow CalFudail is the best platform I have ever used. Definitely
+                Wow CalEasy is the best platform I have ever used. Definitely
                 Recommend it to you guys, try it out!
               </span>
             </p>
