@@ -37,7 +37,7 @@ export function LoginModal() {
           <form action={signInGoogle} className="w-full">
             <GoogleAuthButton text={"Log in with Google"} />
           </form>
-          <form action={signInGithub}>
+          <form action={signInGithub} className="hidden">
             <GitHubAuthButton text={"Log in with GitHub"}/>
           </form>
         </div>
