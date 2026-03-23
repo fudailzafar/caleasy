@@ -2,11 +2,11 @@
 
 import { Button } from "@/app/components/ui/button";
 import { useFormStatus } from "react-dom";
-import GoogleLogo from "@/public/google.svg";
 import Image from "next/image";
 import { Loader2 } from "lucide-react";
 import GitHubLogo from "@/public/github.svg";
 import { cn } from "@/app/lib/utils";
+import { FaGoogle } from "react-icons/fa";
 
 interface iAppProps {
   text: string;
@@ -54,8 +54,8 @@ export function GoogleAuthButton({ text }: { text: String }) {
           <Loader2 className="size-4 mr-2 animate-spin" /> Please wait
         </Button>
       ) : (
-        <Button variant="outline" className="w-full">
-          <Image src={GoogleLogo} alt="Google Logo" className="size-4 mr-2" />
+        <Button variant="outline" className="w-full gap-1">
+          <FaGoogle className="size-4 mr-2 text-primary"/>
           {text}
         </Button>
       )}

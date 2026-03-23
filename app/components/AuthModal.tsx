@@ -4,6 +4,7 @@ import {
   Dialog,
   DialogContent,
   DialogHeader,
+  DialogTitle,
   DialogTrigger,
 } from "@/app/components/ui/dialog";
 import Image from "next/image";
@@ -28,11 +29,11 @@ export function AuthModal({ text }: { text: string }) {
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[360px]">
-        <DialogHeader className="flex flex-row justify-center items-center gap-2">
-          <Image src={Logo} alt="Logo" className="size-10" />
-          <h4 className="text-3xl font-semibold">
-            Cal<span className="text-primary">Easy</span>
-          </h4>
+        <DialogHeader>
+          <h4 className="text-2xl font-medium">Sign Up</h4>
+          <DialogTitle className="text-sm font-normal">
+          Use your Google account below to sign up
+        </DialogTitle>
         </DialogHeader>
         <div className="flex flex-col mt-5 gap-3">
           <form action={signInGoogle} className="w-full">

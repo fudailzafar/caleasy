@@ -52,7 +52,7 @@ export default function Header() {
 
             <div className="gap-2 flex">
               <LoginModal />
-              <AuthModal text={"Sign Up"} />
+              <AuthModal text={"Get started for free"} />
               <AnimatedThemeToggler />
             </div>
           </div>
