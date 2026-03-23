@@ -93,7 +93,7 @@ function HeroCTA() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.8, ease }}
       >
-        <AuthModal text={"Get Started"} />
+        <AuthModal text={"Get started for free"} />
       </motion.div>
       <motion.p
         id="video"

@@ -10,7 +10,7 @@ export default function CTA() {
       className="bg-primary/10 rounded-xl py-16"
     >
       <div className="flex flex-col w-full sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
-        <AuthModal text={"Start Now!"}/>
+        <AuthModal text={"Get started for free"}/>
       </div>
     </Section>
   );
