@@ -55,6 +55,9 @@ export const metadata = {
     canonical: "https://caleasy.vercel.app",
   },
   robots: "index, follow",
+  verification: {
+    google: "QgVm-W9_sWA8B47coaItOUCg-3pX84KbM2wEtP9Jpm4"
+  },
 };
 
 export default function RootLayout({
