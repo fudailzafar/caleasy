@@ -54,7 +54,10 @@ export const metadata = {
   alternates: {
     canonical: "https://caleasy.vercel.app",
   },
-  robots: "index, follow",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({
