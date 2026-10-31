@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security report
+    url: https://github.com/fudailzafar/caleasy/security
+    about: Please report vulnerabilities privately. See SECURITY.md.
+  - name: Discussions
+    url: https://github.com/fudailzafar/caleasy/discussions
+    about: Ask setup and usage questions here.
